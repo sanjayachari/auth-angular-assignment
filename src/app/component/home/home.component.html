@@ -1,0 +1,59 @@
+<div class="relative h-screen w-screen flex items-center justify-center">
+  <div class="box absolute top-[300px] right-[300px]"></div>
+  <div class="box absolute bottom-[300px] left-[300px]"></div>
+  <div class="relative w-[1051px]  h-[#604px] md:grid grid-cols-2 md:rounded-2xl">
+    <div
+      class="col-span-1 flex items-center justify-center bg-[#DBE9F6] bg-opacity-100  md:rounded-l-2xl"
+    >
+      <img src="/logo.svg" class="absolute top-5 left-5" alt="" />
+      <img src="/login.svg" class=" " alt="" />
+    </div>
+    <div
+      class="h-[500px] md:rounded-r-2xl col-span-1 bg-white flex items-center justify-center"
+    >
+      <form
+        class="flex flex-col w-[333px]"
+        [formGroup]="myForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <h3 class="text-[20px] my-[24px] font-bold">Welcome</h3>
+       <div class="h-[100px] flex flex-col">
+        <label for="" class="text-[#0069D1] font-semibold mb-2"
+        >Enter Email ID</label
+      >
+      <input
+        type="text"
+        formControlName="email"
+        (change)="onChange($event)"
+        class="py-2 px-4 rounded-[16px] border-black bg-[#E4ECEE]"
+        placeholder="Loremipsum@gmail.com"
+        name="email"
+        id=""
+      />
+      <!-- Error Message for Required Field -->
+      <div *ngIf="myForm.controls['email'].touched && myForm.controls['email'].hasError('required')">
+        <small class="error text-red-500">Email is required!</small>
+      </div>
+
+       </div>
+        <span class="my-[24px] text-[#767676] font-semibold">(OR)</span>
+        <label for="" class="text-[#0069D1] font-semibold mb-2"
+          >Enter Mobile No.</label
+        >
+        <input
+          type="number"
+          class="py-2 px-4 rounded-[16px] border-black bg-[#E4ECEE]"
+          placeholder="91+"
+          name=""
+          id=""
+        />
+        <button
+          class="bg-[#0069D1] text-white p-2 rounded-[16px] my-[24px]"
+          type="submit"
+        >
+          Next
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

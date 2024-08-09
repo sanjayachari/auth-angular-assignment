@@ -1,0 +1,275 @@
+<div
+  class="relative md:h-screen w-[100%] flex items-center justify-center md:my-[50px]"
+>
+  <div class="box absolute top-[300px] right-[300px]"></div>
+  <div class="box absolute bottom-[300px] left-[300px]"></div>
+  <div class="relative w-[1051px] h-[#604px] md:grid grid-cols-2 rounded-2xl">
+    <div
+      class="col-span-1 flex items-center justify-center bg-[#DBE9F6] bg-opacity-100 md:rounded-l-2xl"
+    >
+      <img src="/logo.svg" class="absolute top-5 left-5" alt="" />
+      <img src="/login.svg" class=" " alt="" />
+    </div>
+    <div
+      class="py-[30px] md:rounded-r-2xl col-span-1 bg-white flex items-center justify-center"
+    >
+      @switch(onboard){ @case("initial"){
+      <form
+        class="flex flex-col w-[333px] h-[500px]"
+        [formGroup]="myForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <h3 class="text-[20px] font-bold">Create Account</h3>
+        <div class="flex gap-2 my-[24px]">
+          <div class="w-full p-1 bg-[#0069D1] rounded-md"></div>
+          <div class="w-full p-1 bg-[#E4ECEE] rounded-md"></div>
+        </div>
+        <div class="h-[90px] flex flex-col">
+          <label for="" class="text-[#0069D1] font-semibold mb-2"
+            >Enter Email ID</label
+          >
+          <input
+            type="text"
+            formControlName="email"
+            (change)="onChangeEmail($event)"
+            class="py-2 px-4 rounded-[16px] border-black bg-[#E4ECEE]"
+            placeholder="Loremipsum@gmail.com"
+            name="email"
+            id=""
+          />
+          <!-- Error Message for Required Field -->
+          <div
+            *ngIf="
+              myForm.controls['email'].touched &&
+              myForm.controls['email'].hasError('required')
+            "
+          >
+            <small class="error text-red-500">Email is required!</small>
+          </div>
+        </div>
+        <div class="h-[100px] flex flex-col mb-4">
+          <label for="" class="text-[#0069D1] font-semibold my-2"
+            >Enter Full name</label
+          >
+          <input
+            type="text"
+            class="py-2 px-4 rounded-[16px] border-black bg-[#E4ECEE]"
+            placeholder="Full name"
+            (change)="onChangeFullName($event)"
+            name=""
+            id=""
+          />
+          <div
+            *ngIf="
+              myForm.controls['fullName'].touched &&
+              myForm.controls['fullName'].hasError('required')
+            "
+          >
+            <small class="error text-red-500">Email is required!</small>
+          </div>
+        </div>
+        <div class="h-[100px] flex flex-col mb-4">
+          <label for="" class="text-[#0069D1] font-semibold my-2"
+            >Create Password</label
+          >
+          <input
+            type="password"
+            class="py-2 px-4 rounded-[16px] border-black bg-[#E4ECEE]"
+            placeholder="Password"
+            (change)="onChangePassword($event)"
+            name=""
+            id=""
+          />
+          <div
+            *ngIf="
+              myForm.controls['password'].touched &&
+              myForm.controls['password'].hasError('required')
+            "
+          >
+            <small class="error text-red-500">Email is required!</small>
+          </div>
+        </div>
+        <button
+          class="bg-[#0069D1] text-white p-2 rounded-[16px]"
+          type="submit"
+        >
+          Next
+        </button>
+      </form>
+      <!-- ================================= -->
+      } @case("registered"){
+      <form
+        action=""
+        class="flex flex-col w-[333px]"
+        [formGroup]="myForm"
+        (ngSubmit)="createAcoount()"
+      >
+        <div class="my-[24px] flex gap-2">
+          <img src="/back.svg" alt="" />
+          <div class="text-[#0069D1]">Go back</div>
+        </div>
+        <h3 class="text-[20px] font-bold">Create Account</h3>
+        <div class="flex gap-2 my-[14px]">
+          <div class="w-full p-1 bg-[#0069D1] rounded-md"></div>
+          <div class="w-full p-1 bg-[#0069D1] rounded-md"></div>
+        </div>
+        <div class="h-[100px] flex flex-col mb-2">
+          <label for="" class="text-[#0069D1] font-semibold my-2"
+            >Organisation-name</label
+          >
+          <input
+            type="text"
+            class="mb-1 py-2 px-4 rounded-[16px] border-black bg-[#E4ECEE]"
+            placeholder="Loremipsum@gmail.com"
+            (change)="onChangeOrg($event)"
+
+            name=""
+            id=""
+          />
+          <div
+            *ngIf="
+              myForm.controls['organizationName'].touched &&
+              myForm.controls['organizationName'].hasError('required')
+            "
+          >
+            <small class="error text-red-500">Organisation name is required!</small>
+          </div>
+        </div>
+
+        <div class="h-[100px] flex flex-col mb-2">
+          <label for="" class="text-[#0069D1] font-semibold my-2"
+            >Organisation-id</label
+          >
+
+          <input
+            type="text"
+            class="mb-1 py-2 px-4 rounded-[16px] border-black bg-[#E4ECEE]"
+            placeholder="Full name"
+            (change)="onChangeOrgId($event)"
+            name=""
+            id=""
+          />
+          <div
+            *ngIf="
+              myForm.controls['organizationId'].touched &&
+              myForm.controls['organizationId'].hasError('required')
+            "
+          >
+            <small class="error text-red-500">Organization Id is required!</small>
+          </div>
+        </div>
+
+        <div class="h-[100px] flex flex-col mb-2">
+          <label for="" class="text-[#0069D1] font-semibold my-2"
+            >Designation</label
+          >
+          <input
+            type="text"
+            class="mb-1 py-2 px-4 rounded-[16px] border-black bg-[#E4ECEE]"
+            placeholder="Designation"
+            (change)="onChangeOrgDestination($event)"
+
+            name=""
+            id=""
+          />
+          <div
+            *ngIf="
+              myForm.controls['designation'].touched &&
+              myForm.controls['designation'].hasError('required')
+            "
+          >
+            <small class="error text-red-500">Designation is required!</small>
+          </div>
+        </div>
+
+        <div class="h-[100px] flex flex-col mb-2">
+          <label for="" class="text-[#0069D1] font-semibold my-2"
+            >Birth-date</label
+          >
+          <input
+            type="date"
+            class="mb-1 py-2 px-4 rounded-[16px] border-black bg-[#E4ECEE] text-black text-opacity-40"
+            placeholder="Designation"
+            (change)="onChangeOrgDob($event)"
+
+            name=""
+            id=""
+          />
+          <div
+            *ngIf="
+              myForm.controls['dob'].touched &&
+              myForm.controls['dob'].hasError('required')
+            "
+          >
+            <small class="error text-red-500">Date of birth is required!</small>
+          </div>
+        </div>
+        <div class="flex gap-2 h-[120px]">
+          <div class="flex flex-col">
+            <label for="" class="text-[#0069D1] font-semibold my-2">City</label>
+            <input
+              type="text"
+              class="mb-1 py-2 px-4 w-full rounded-[16px] border-black bg-[#E4ECEE]"
+              placeholder="City"
+            (change)="onChangeOrgCity($event)"
+
+              name=""
+              id=""
+            />
+            <div
+              *ngIf="
+                myForm.controls['city'].touched &&
+                myForm.controls['city'].hasError('required')
+              "
+            >
+              <small class="error text-red-500">City is required!</small>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <label for="" class="text-[#0069D1] font-semibold my-2"
+              >Create Password</label
+            >
+            <input
+              type="password"
+              class="mb-1 py-2 px-4 w-full rounded-[16px] border-black bg-[#E4ECEE]"
+              placeholder="Password"
+            (change)="onChangePassword($event)"
+
+              name=""
+              id=""
+            />
+            <div
+              *ngIf="
+                myForm.controls['password'].touched &&
+                myForm.controls['password'].hasError('required')
+              "
+            >
+              <small class="error text-red-500">Password is required!</small>
+            </div>
+          </div>
+        </div>
+        <button class="bg-[#0069D1] text-white p-2 rounded-[16px]">Next</button>
+      </form>
+      <!-- ================================= -->
+
+      } @default{
+      <div class="flex flex-col items-center justify-center h-[500px]">
+        <div class="relative h-[200px] w-[200px]">
+          <img src="/successlogo.svg" alt="" />
+          <img
+            src="/right.svg"
+            class="absolute top-0 left-0 bottom-0 right-0 m-auto"
+            alt=""
+          />
+        </div>
+        <div class="text-[28px] font-semibold mt-[34px]">
+          Welcome to Solvei8!
+        </div>
+        <div class="text-[#767676] mt-[10px] px-3">
+          Redirecting you to the Login screen. This might take a few seconds...
+        </div>
+      </div>
+      } }
+    </div>
+  </div>
+</div>

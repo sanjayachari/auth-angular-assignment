@@ -1,0 +1,92 @@
+{
+  "user": [
+    {
+      "id": "8820",
+      "email": "san@gmail.com",
+      "password": "123456",
+      "fullName": "sanjay",
+      "organizationName": "",
+      "organizationId": "",
+      "designation": "",
+      "dob": "",
+      "city": ""
+    },
+    {
+      "id": "8826",
+      "email": "myEmail",
+      "password": "1234567",
+      "fullName": "sanjay2",
+      "organizationName": "",
+      "organizationId": "",
+      "designation": "",
+      "dob": "",
+      "city": ""
+    },
+    {
+      "id": "3a00",
+      "email": "codesanjay93@gmail.com",
+      "password": "codesanjay93@gmail.com",
+      "fullName": "sanju",
+      "organizationName": "sa",
+      "organizationId": "man",
+      "designation": "sam",
+      "dob": "9991-11-12",
+      "city": "sas"
+    },
+    {
+      "id": "c916",
+      "email": "sasan@gmail.com",
+      "password": "sa",
+      "fullName": "sasa",
+      "organizationName": "sas",
+      "organizationId": "sasa",
+      "designation": "s",
+      "dob": "0011-11-01",
+      "city": "1sa"
+    },
+    {
+      "id": "b2b5",
+      "email": "codesanjasasay93@gmail.com",
+      "password": "sasas",
+      "fullName": "sas",
+      "organizationName": "sasas",
+      "organizationId": "sasa",
+      "designation": "sasas",
+      "dob": "1212-12-12",
+      "city": "wqwqw"
+    },
+    {
+      "id": "9132",
+      "email": "sas",
+      "password": "sqw",
+      "fullName": "sas",
+      "organizationName": "as",
+      "organizationId": "sas",
+      "designation": "sas",
+      "dob": "1212-12-12",
+      "city": "qww"
+    },
+    {
+      "id": "13cd",
+      "email": "san123@gmail.com",
+      "password": "sanjay",
+      "fullName": "sanjay",
+      "organizationName": "org",
+      "organizationId": "org id",
+      "designation": "full stack",
+      "dob": "2024-02-01",
+      "city": "banglore"
+    },
+    {
+      "id": "0fdf",
+      "email": "sanjay@gmail.com",
+      "password": "sanjay",
+      "fullName": "sanjay",
+      "organizationName": "san org",
+      "organizationId": "sanId",
+      "designation": "full stack dev",
+      "dob": "2024-11-11",
+      "city": "bengaluru"
+    }
+  ]
+}

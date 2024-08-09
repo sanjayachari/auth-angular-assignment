@@ -1,0 +1,97 @@
+<div class="relative h-screen w-screen flex items-center justify-center">
+  <div class="box absolute top-[300px] right-[300px]"></div>
+  <div class="box absolute bottom-[300px] left-[300px]"></div>
+  <div class="relative w-[1051px] h-[#604px] md:grid grid-cols-2 rounded-2xl">
+    <div
+      class="col-span-1 flex items-center justify-center bg-[#DBE9F6] bg-opacity-100 md:rounded-l-2xl"
+    >
+      <img src="/logo.svg" class="absolute top-5 left-5" alt="" />
+      <img src="/login.svg" class=" " alt="" />
+    </div>
+    <div
+      class="h-[500px] md:rounded-r-2xl col-span-1 bg-white flex items-center justify-center"
+    >
+      @if(isAuthenticated){
+      <div class="flex flex-col items-center justify-center">
+        <div class="relative h-[200px] w-[200px]">
+          <img src="/successlogo.svg" alt="" />
+          <img
+            src="/right.svg"
+            class="absolute top-0 left-0 bottom-0 right-0 m-auto"
+            alt=""
+          />
+        </div>
+        <div class="text-[28px] font-semibold mt-[34px]">
+          Logging you in....
+        </div>
+        <div class="text-[#767676] mt-[10px] px-3">
+          Kindly wait as we are curating the data accordingly.
+        </div>
+      </div>
+      } @else{
+
+      <form
+        action=""
+        class="flex flex-col w-[333px]"
+        [formGroup]="myForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <h3 class="text-[20px] my-[24px] font-bold">Welcome</h3>
+        <div class="h-[100px] flex flex-col">
+          <label for="" class="text-[#0069D1] font-semibold mb-2"
+            >Enter Email ID</label
+          >
+          <input
+            type="text"
+            formControlName="email"
+            (change)="onChangeEmail($event)"
+            class="py-2 px-4 rounded-[16px] border-black bg-[#E4ECEE]"
+            placeholder="Loremipsum@gmail.com"
+            name="email"
+            id=""
+          />
+          <!-- Error Message for Required Field -->
+          <div
+            *ngIf="
+              myForm.controls['email'].touched &&
+              myForm.controls['email'].hasError('required')
+            "
+          >
+            <small class="error text-red-500">Email is required!</small>
+          </div>
+        </div>
+        <span class="mb-[14px]"></span>
+        <div class="h-[80px] flex flex-col">
+          <label for="" class="text-[#0069D1] font-semibold mb-2"
+            >Enter Password</label
+          >
+          <input
+            type="password"
+            class="py-2 px-4 rounded-[16px] border-black bg-[#E4ECEE]"
+            placeholder="Password"
+            formControlName="password"
+            (change)="onChangePassword($event)"
+            name=""
+            id=""
+          />
+
+          <div
+            *ngIf="
+          myForm.controls['password'].touched &&
+          myForm.controls['password'].hasError('required')
+        "
+          >
+            <small class="error text-red-500">Password is required!</small>
+          </div>
+        </div>
+        <button
+          class="bg-[#0069D1] text-white p-2 rounded-[16px] my-[24px]"
+          type="submit"
+        >
+          Next
+        </button>
+      </form>
+      }
+    </div>
+  </div>
+</div>
